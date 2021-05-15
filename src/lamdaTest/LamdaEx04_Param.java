@@ -14,7 +14,7 @@ public class LamdaEx04_Param {
     public static void main(String[] args) {
         showString((s) -> {
             System.out.println(s);
-        }, "What is Lambda?");
+        }, "What is Lambda???");
         // showString 메서드의 첫번째 매개변수로는 Printable2를 구현한 클래스가 필요하며
         // 이를 람다식으로 적용함.
     } // main
