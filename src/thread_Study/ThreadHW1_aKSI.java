@@ -4,7 +4,11 @@ package thread_Study;
 
 import java.util.concurrent.locks.ReentrantLock;
 
+<<<<<<< HEAD
 public class ThreadHW1_aKSI {
+=======
+public class ThreadHW1 {
+>>>>>>> refs/remotes/origin/master
 
     public static void main(String[] args) {
         // TODO Auto-generated method stub
