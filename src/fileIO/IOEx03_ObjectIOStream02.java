@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
-import java.util.Date;
 
 // ** ObjectIOStream
 // => 객체직렬화 Object Serialization  
@@ -17,31 +16,37 @@ class SBox implements Serializable {
 //   java.io.NotSerializableException: fileIO.SBox...
 	private static final long serialVersionUID = 1L;
 	// Serializable 을 implements 하고 위의 상수를 정의 하지 않으면 경고
-	String s;
-    public SBox(String s) { this.s = s; }
-    public String get() { return s; }
+	// => 객체직렬화 및 역직렬화 과정에서 클래스의 버전을 확인하는 중요한 용도
+	String name;
+	int age;
+    public SBox(String n, int a) { 
+    	this.name = n; 
+    	this.age = a;
+    	}
+    public void printS() { 
+    	System.out.println("name:"+this.name+" , age:"+age);
+    	}
 } //SBox 
 
 class IOEx03_ObjectIOStream02 {
 	public static void main(String[] args) throws IOException {
 	
-		SBox box1 = new SBox("Robot");
-	    SBox box2 = new SBox("Strawberry");
+		SBox box1 = new SBox("홍길동", 100);
+	    SBox box2 = new SBox("John", 25);
 		
 	    ObjectOutputStream out = 
-	                new ObjectOutputStream(new FileOutputStream("object1.bin"));
+	            new ObjectOutputStream(new FileOutputStream("object.bin"));
 		ObjectInputStream in = 
-                new ObjectInputStream(new FileInputStream("object1.bin"));
+                new ObjectInputStream(new FileInputStream("object.bin"));
 		try {
-			
 			out.writeObject(box1);
             out.writeObject(box2);
 			
             SBox nbox1 = (SBox) in.readObject();
-            System.out.println(nbox1.get());
+            nbox1.printS();
 
             SBox nbox2 = (SBox) in.readObject();
-            System.out.println(nbox2.get());            
+            nbox2.printS();            
         }
         catch(ClassNotFoundException e) {
             e.printStackTrace();       

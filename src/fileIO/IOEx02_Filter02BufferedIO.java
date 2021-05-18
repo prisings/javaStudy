@@ -23,7 +23,7 @@ class IOEx02_Filter02BufferedIO {
 		// 2) BufferedOutputStream 생성
 		// => 출력 스트림을 생성하여 BufferedOutput 필터스트림과 연결한다. 
 		BufferedOutputStream out = 
-			new BufferedOutputStream(new FileOutputStream("d:\\MTest\\sql001Copy.sql"));
+			new BufferedOutputStream(new FileOutputStream("d:\\MTest\\sql001Copy2.sql"));
 		// => 인자로 전달된 출력 스트림과 연결된 출력객체를 생성   
 	
 		try {

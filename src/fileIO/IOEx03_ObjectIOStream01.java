@@ -19,7 +19,6 @@ class IOEx03_ObjectIOStream01 {
         
         try {
                out.writeObject(new Date()); // 객체를 직렬화 해서 사용 
-               out.flush();
                Date d = (Date) in.readObject();
                System.out.println(d);
 

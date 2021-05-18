@@ -12,8 +12,9 @@ class IOEx02_Filter01DataIO {
 		// ** 생성순서 주의 : RunTime 오류 발생 
 		// 1) 기본자료형 단위의 출력을 위한 DataOutputStream 생성
 		// => 출력 스트림을 생성하여 DataOutput 필터스트림과 연결한다. 
-		FileOutputStream fout = new FileOutputStream("data.bin");
-		DataOutputStream out = new DataOutputStream(fout);
+//		FileOutputStream fout = new FileOutputStream("data.bin");
+//		DataOutputStream out = new DataOutputStream(fout);
+		DataOutputStream out = new DataOutputStream(new FileOutputStream("data.bin"));
 		// => 인자로 전달된 출력 스트림과 연결된 DataOutputStream 객체를 생성   
 		 
         // 2) 기본 자료형 단위의 데이터 입력을 위한 DataInputStream 생성
@@ -25,7 +26,6 @@ class IOEx02_Filter01DataIO {
                out.writeDouble(3.14);
                out.writeInt(100);
                out.writeUTF("자신의 생각을 바꾸지 못하는 사람은 결코 현실을 바꿀 수 없다.");
-               out.flush();
                // read 시는 저장된 순서에 따라 처리함
                // => 그러므로 순서와 타입을 지켜야함.
                double d = in.readDouble() ;

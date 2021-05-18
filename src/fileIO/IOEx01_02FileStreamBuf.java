@@ -25,9 +25,8 @@ class IOEx01_02FileStreamBuf {
             	// => 다 읽으면 -1 반환
                 len = in.read(buf);             
                 if(len == -1) break;   
-                // write(buf, offset, len) : buf의 offset 위치에 len 만큼의 byte를 출력   
-                out.write(buf, 0, len);
-            }
+                out.write(buf);
+            } // while
         }catch(IOException e) {
             e.printStackTrace();       
         }finally {
