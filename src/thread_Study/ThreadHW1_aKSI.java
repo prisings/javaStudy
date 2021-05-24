@@ -11,7 +11,7 @@ public class ThreadHW1_aKSI {
 			ThreadTest p = new ThreadTest(1, 50, lock);
 			ThreadTest p1 = new ThreadTest(51, 100, lock);
 			Thread thw1 = new Thread(p, "일번");
-			Thread thw2 = new Thread(p1, "이번");
+			Thread thw2 = new Thread(p1, "이번삼번");
 
 			thw1.start();
 			thw2.start();
