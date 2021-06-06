@@ -30,7 +30,7 @@ public class GitTest {
 		 git stash / git stash save “description” : 작업코드 임시저장하고 브랜치 바꾸기
 		 git stash pop : 마지막으로 임시저장한 작업코드 가져오기
 		 git branch — set-upstream-to=remote_path/branch_name : git pull no tracking info 에러해결
-
+         주의! 보통 history를 위해 rebase를 하는데 이건 연습이 더필요함 어려움
 		 
 		 */
 	}
